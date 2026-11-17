@@ -1,4 +1,5 @@
 
+import java.nio.file.Path;
 import java.util.Scanner;
 
 public class riliseRegClass {
@@ -94,7 +95,7 @@ public class riliseRegClass {
 
         System.out.println("\n" + registrationStatus);
 
-        // LOGIN AND LAUNCH PART 2
+        // LOGIN AND LAUNCH QUICKCHAT
         if (registrationStatus.equals("Registration was successful!")) {
 
             boolean loginSuccessful =
@@ -102,8 +103,7 @@ public class riliseRegClass {
 
             if (loginSuccessful) {
 
-                // PART 2: QUICKCHAT
-                Messages quickChat = new Messages();
+                Messages quickChat = new Messages(Path.of("messages.json"), user.cellphoneNumber);
 
                 System.out.println("\nStarting QuickChat...");
 
